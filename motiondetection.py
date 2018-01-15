@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+import os
 
 pirsensor = 4
 GPIO.setmode(GPIO.BCM)
@@ -15,3 +16,4 @@ while True:
    if current_state != previous_state:
       if current_state:
          print('Motion Detected!')
+	 os.system("python pushgcm.py")
